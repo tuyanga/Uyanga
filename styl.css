@@ -1,0 +1,16 @@
+.text{
+    background-color:black;
+    width:500px;
+    height:250px;
+    color:white;
+}
+.container{
+    display:grid;
+    gap:50px;
+    grid-template-columns:repeat(auto-fit, minmax(600px, 1fr));
+}
+@media screen and( max-width:767px){
+    .text:nth-child(1){
+        display:none;
+    }
+}
