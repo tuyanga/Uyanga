@@ -1,5 +1,5 @@
 //1. Гараас өгсөн тооны цифрүүдийн нийлбэр нь палимдром мөн эсэхийг шалга//
-
+function bod1(){
 document.writeln("<p>1.Цифрүүдийн нийлбэр нь палиндром эсэхийг шалгах програм</p>");
 var number=window.prompt("Тоо:");
 var numberInt=parseInt(number);
@@ -19,9 +19,9 @@ if(reverse==sum){
 }else{
     document.writeln("<p>Палиндром биш</p>");   
 }
-
+}
 // 2. Чоно 25 км/ц хурдтай, туулай 18 км/ц хурдтай. Гараас өгсөн зайтай байхад хэдэн минут хэдэн секундын дараа гэхэд гүйцэх вэ
-
+function bod2(){
 document.writeln("<p>2.Чоно туулайг гүйцэх хугацааг тооцоолох програм</p>");
 var distance=window.prompt("Зай:");
 var distanceInt=parseInt(distance);
@@ -33,9 +33,9 @@ var time=distanceInt/(wolfspeed-rabbitspeed);
 var minutes=Math.floor(time/60);
 var seconds=Math.round(time%60);
 document.writeln(minutes+" минут "+seconds+" секунд.");
-
+}
 // 3. Байшин 9 давхар, 3 орцтой, давхартаа 4 айлтай бол гараас өгсөн тоот нь хэддүгээр орцны хэддүгээр давхарын хэд дэх хаалга вэ
-
+function bod3(){
 document.writeln("<p>3.Тоот унших програм</p>");
 var toot=window.prompt("Тоот:");
 var tootInt=parseInt(toot);
@@ -60,9 +60,9 @@ else{
     document.writeln("Давхар:",davhar+1);
     document.writeln("Хаалга:",haalga);
 }
-
+}
 // 4. Array-д өгөгдсөн 5 тооны хамгийн бага ерөнхий хуваагдагчийг ол
-
+function bod4(){
 document.writeln("<p>4.5 тооны хамгийн бага ерөнхий хуваагдагчийг олох програм</p>");
 var a=[];
 var i=0;
@@ -98,9 +98,9 @@ for (var i = 0; i < 5; i++){
     res*=a[i];
 }
 document.write("ХБЕХ:"+res);
-
+}
 // 5. Вэб сайтруу өглөө ороход гараас өгсөн тооны 2 зэрэгийг, орой ороход гараас өгсөн тооны язгуурыг ол. //
-
+function bod5(){
 document.writeln("<p>5.Тооны зэрэг болон язгуур олох програм</p>");
 var too=window.prompt("Хувиргах тоо:");
 var tooInt=parseInt(too);
@@ -112,4 +112,4 @@ if (hour >= 6 && hour < 18) {
 } else {
     document.writeln("<p>Таны тооны язгуур: " + Math.sqrt(tooInt) + "</p>");
 }
-
+}

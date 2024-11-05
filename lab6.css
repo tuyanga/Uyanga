@@ -1,7 +1,7 @@
 body {
     color: inherit;
     color: #000;
-    font-family: "Louis Vuitton Web", "Louis Vuitton Web Fallback", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-family:Arial, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: .025rem;
@@ -12,21 +12,6 @@ body {
     top: 0;
     overflow: hidden;
     background-color: #fff;
-  }
-  ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  li {
-    height: auto;
-    width: 25%;
-  }
-  img {
-    width: 100%;
-    max-height: 40vh;
-    min-width: 0;
   }
   #navbar a {
     float: left;
@@ -39,3 +24,14 @@ body {
   .content {
     padding: 16px;
   }
+  ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap:1rem; 
+  }
+  .product-list-item {
+    width:20vw;
+    height:30vh;
+}
