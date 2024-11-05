@@ -92,7 +92,6 @@ strong, h1, h2, h3, h4, h5, h6 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 .card-header, .card-footer {
     background-color: #9090A5;
     color: #fff;
@@ -122,7 +121,6 @@ strong, h1, h2, h3, h4, h5, h6 {
     border-left-color: #1B1B6C;
     border-right-color: #1B1B6C;
 }
-
 .text-body-secondary {
     background-color: #352BA5;
 }

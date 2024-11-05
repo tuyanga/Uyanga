@@ -71,30 +71,26 @@ while(i<5){
     a[i]=parseInt(a[i]);
     i++;
 }
-
 var max_num=Math.max(...a) 
-var res = 1;
-var x = 2;
-
-while (x <= max_num){
+var res=1;
+var x=2;
+while (x<=max_num){
     var indexes=[];
-
-    for (var j = 0; j<5; j++){
-        if (a[j] % x == 0){
+    for (var j=0; j<5; j++){
+        if (a[j]%x==0){
             indexes.push(j);
         }
-    }
-    
+    }    
     if (indexes.length >= 2){
-        for (var j = 0; j < indexes.length; j++){
-            a[indexes[j]] = a[indexes[j]]/x;
+        for (var j=0; j<indexes.length; j++){
+            a[indexes[j]]=a[indexes[j]]/x;
         }
         res*=x;
     }else{
         x++;
     }
 }
-for (var i = 0; i < 5; i++){
+for (var i=0; i<5; i++){
     res*=a[i];
 }
 document.write("ХБЕХ:"+res);
@@ -106,10 +102,9 @@ var too=window.prompt("Хувиргах тоо:");
 var tooInt=parseInt(too);
 var date=new Date();
 var hour = date.getHours();
-
 if (hour >= 6 && hour < 18) {
-    document.writeln("<p>Таны тооны 2 зэрэг: " + Math.pow(tooInt, 2) + "</p>");
+    document.writeln("<p>2 зэрэг: "+tooInt**2+"</p>");
 } else {
-    document.writeln("<p>Таны тооны язгуур: " + Math.sqrt(tooInt) + "</p>");
+    document.writeln("<p>язгуур: "+Math.sqrt(tooInt)+"</p>");
 }
 }
