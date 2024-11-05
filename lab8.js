@@ -98,7 +98,7 @@ document.write("ХБЕХ:"+res);
 // 5. Вэб сайтруу өглөө ороход гараас өгсөн тооны 2 зэрэгийг, орой ороход гараас өгсөн тооны язгуурыг ол. //
 function bod5(){
 document.writeln("<p>5.Тооны зэрэг болон язгуур олох програм</p>");
-var too=window.prompt("Хувиргах тоо:");
+var too=window.prompt("Тоо:");
 var tooInt=parseInt(too);
 var date=new Date();
 var hour = date.getHours();
