@@ -85,7 +85,7 @@ body{
     width:calc(100% / 9 - 5px);/* 9 keyboard in 1 row 5px in wrap*/
 }
 .keyboard button[disabled]{
-    opacity: 0.6;/*transparency-level*/
+    opacity: 0.6;
     pointer-events:none;
 }
 :where(.game-modal, .keyboard) button:hover{
@@ -105,7 +105,7 @@ body{
     align-items:center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.6);
-    transition:opacity 0.4s ease; /*specifies a transition effect with a slow start, then fast, then end slowly (this is default)*/
+    transition:opacity 0.4s ease; 
 }
 .game-modal.show{
     opacity:1;
@@ -118,9 +118,9 @@ body{
     transform: translateY(-50%); /* then moves the element upwards by 50% of its own height */
     width: auto;
     height: auto;
-    opacity: 0; /* Үндсэндээ харагдахгүй болгох */
-    z-index: 1000; /* Давхаргын дээд талд */
-    transition: opacity 0.4s ease; /* Зөөлөн илрэх шилжилт */
+    opacity: 0; /* харагдахгүй болгох */
+    z-index: 1000;
+    transition: opacity 0.4s ease;
 }
 .con-modal.show {
     opacity: 1; /* Харагддаг болгох */

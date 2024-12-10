@@ -24,14 +24,14 @@ const resetGame = () =>{
 };
 const getRandomWord = () =>{
     //word listees sanamsargiu ug songoh
-   const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];//random 0-1, wordlist len, buhel utga vah floor
+   const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];//random 0-1, wordlist len, buhel utga avah floor
    currentWord=word;//taah ug onooh
    document.querySelector(".hint-text b").innerText = hint;//textiig hint onooh
    resetGame();//daraagiin ued beldeh
 };
 
 const gameOver = (isVictory) =>{
-    //after 6600ms game complete.. showing modal with relevant details
+
     setTimeout(()=>{
         const modalText = isVictory ? `You found the word: ` : `The correct word was: `;
         gameModal.querySelector("img").src=`images/${isVictory ? 'victory': 'lost'}.gif`;
