@@ -13,20 +13,44 @@ body {
     line-height: 1.5rem;
 }
 #navbar {
+    display: flex;
+    align-items: center; /* Элементүүдийг босоо тэнхлэгт төвлөрүүлэх */
+    justify-content: space-between; /* Элементүүдийн хооронд зайг жигд тараах */
     position: sticky;
     z-index: 999;
     top: 0;
-    overflow: hidden;
     background-color: #fff;
+    padding: 0 1rem; /* Хажуугийн хоосон зай нэмэх */
 }
+
+.menu-search, .connect {
+    display: flex; /* Элементүүдийг нэг шугамд байрлуулах */
+    align-items: center; /* Элементүүдийг босоо тэнхлэгт зэрэгцүүлэх */
+    gap: 1rem; /* Доторх элементүүдийн хооронд зай */
+}
+
+.header-logo {
+    display: flex;
+    align-items: center; /* Лого босоо тэнхлэгт төвлөрсөн байлгах */
+}
+
+.header-logo svg {
+    width: 220px; /* Логоны хэмжээ нэмэгдүүлсэн */
+    height: auto;
+}
+
 #navbar a {
-    float: left;
-    display: block;
     color: #000;
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
     text-decoration: none;
+    display: flex; /* Элементүүдийг svg болон тексттэй зэрэгцүүлж харуулах */
+    align-items: center;
+    gap: 0.5rem; /* Icon болон текстийн хоорондох зай */
+    font-size: 1rem;
+    font-weight: bold;
 }
+
 .heading{
     color: #000;
     text-align: center;
@@ -160,7 +184,6 @@ h1, h2, h3, h4, h5, h6 {
     object-position:25% 100%;
 }
 
-
 video {
     bottom: 0;
     height: 100%;
@@ -178,7 +201,6 @@ video {
     padding-left: 6.4vw;
     padding-right: 6.4vw;
 }
-
 
 .video-description .small-heading {
     font-size: 0.625rem;
@@ -213,4 +235,112 @@ video {
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.025rem;
+}
+footer{
+    padding-top:2.5rem;
+    padding-bottom:2.5rem;
+}
+.lv-footer{
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    flex-direction: row;
+    align-content:center;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top:2rem;
+    padding-bottom:2rem;
+    padding-left: 2.5rem;
+    padding-right:2.5rem;
+}
+.footer-link{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.footer-link a{
+    text-decoration: none;
+    color:#000;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-wrap:wrap;
+}
+.help, .about, .services, .email{ 
+    flex:1;
+    padding-right: 2rem;
+}
+.footer-heading{
+    color:GREY;
+    font-size: 0.6rem;
+    font-weight: 400;
+}
+.link-heading{
+    text-decoration: underline;
+    font-size: 0.7rem;
+    font-weight: 100;
+}
+.footer-linking-two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2.5rem;
+    padding-right:2.5rem;
+  }
+.lan{
+    align-items: flex-start;
+}
+.link{
+    align-items:flex-end;
+}
+.lan a {
+    color: #000;
+  }
+  
+.link a {
+    text-decoration: none;
+    color: #000;
+    margin-left: 15px;
+  }
+  .sectionhead .small-heading {
+    text-align:center;
+    color:#000;
+    font-size: 0.625rem;
+    font-weight: 400;
+    letter-spacing: 0.0625rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    margin: 0;
+    padding-top:4.6rem;
+    padding-bottom:2rem;
+}
+.heading{
+    color: #000;
+    text-align: center;
+    word-wrap: break-word;
+    padding:0 0 3rem;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+    line-height: 2rem;
+}
+.heading-services{
+    color: #000;
+    text-align: center;
+
+    word-wrap: break-word;
+    padding-top:4.6rem;
+    padding-bottom:3rem;
+
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+    line-height: 2rem;
+}
+.header-logo, .lv-logo{
+    text-align: center;
+    margin: auto;
+    padding: 1.625rem 0;
+}
+.header-logo{
+    height: 100%;
+    left: 0;
+    width: 14.1875rem;
 }

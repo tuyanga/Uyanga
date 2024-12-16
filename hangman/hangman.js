@@ -6,7 +6,6 @@ const conModal=document.querySelector(".con-modal");
 const gameModal=document.querySelector(".game-modal");
 const playAgainBtn=document.querySelector(".play-again");
 
-
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses=5;
 
