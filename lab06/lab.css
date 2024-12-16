@@ -12,7 +12,7 @@ body {
     letter-spacing: .025rem;
     line-height: 1.5rem;
 }
-#navbar {
+nav {
     display: flex;
     align-items: center; /* Элементүүдийг босоо тэнхлэгт төвлөрүүлэх */
     justify-content: space-between; /* Элементүүдийн хооронд зайг жигд тараах */
@@ -38,8 +38,7 @@ body {
     width: 220px; /* Логоны хэмжээ нэмэгдүүлсэн */
     height: auto;
 }
-
-#navbar a {
+nav a {
     color: #000;
     text-align: center;
     padding: 1rem;
@@ -345,10 +344,10 @@ footer{
     width: 14.1875rem;
 }
 @media (max-width: 768px) {
-    .main {
+    main {
         padding: 10px;
     }
-    #navbar {
+    nav {
         flex-direction: column;
     }
 }
