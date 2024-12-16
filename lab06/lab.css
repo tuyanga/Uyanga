@@ -344,3 +344,11 @@ footer{
     left: 0;
     width: 14.1875rem;
 }
+@media (max-width: 768px) {
+    .main {
+        padding: 10px;
+    }
+    #navbar {
+        flex-direction: column;
+    }
+}
