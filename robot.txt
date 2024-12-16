@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /uyanga/lab06/lab.html
+Disallow: /
