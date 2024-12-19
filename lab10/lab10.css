@@ -1,0 +1,77 @@
+
+body {
+    background: #f9fafc;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: #21295F;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+#news-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+details {
+    margin-bottom: 10px;
+    padding: 20px;
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+details:hover {
+    background: #f1f5f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+summary:focus {
+    outline: none;
+}
+
+p {
+    margin: 10px 0 0 0;
+    color: #555;
+}
+
+/* Зураг */
+img {
+    width: 100%;
+    margin-top: 10px;
+    height:auto;
+}
+.ikonarsave, .ikonlazy{
+    display:none;
+}

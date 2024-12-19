@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Мэдээний дэлгэрэнгүй</title>
+</head>
+<body>
+    <header>
+        <h1>Мэдээний дэлгэрэнгүй</h1>
+    </header>
+    <div id="news-container"></div>
+
+    <!-- Сэтгэгдэл бичих болон жагсаалт харуулах хэсэг -->
+    <h2>Сэтгэгдэл үлдээх</h2>
+
+    <div class="comment-section">
+        <form id="commentForm">
+            <label for="name">Нэр:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="comment">Сэтгэгдэл:</label><br>
+            <textarea id="comment" name="comment" required></textarea><br><br>
+            <button type="submit">Илгээх</button>
+        </form>
+    
+        <div id="commentsList"></div>
+    </div>
+    <script>
+        // URL-аас өгөгдлийг татах
+        const params = new URLSearchParams(window.location.search);
+        const title = params.get("title");
+        const description = params.get("description");
+        const pubDate = params.get("pubDate");
+
+        // Контентыг "news-container" дотор нэмэх
+        const newsContainer = document.getElementById("news-container");
+        newsContainer.innerHTML = `
+            <div class="news-detail">
+                <h2>${title}</h2>
+                <p><strong>Огноо:</strong> ${pubDate}</p>
+                <div class="description">
+                    ${description}
+                </div>
+            </div>
+        `;
+
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const comment = document.getElementById('comment').value;
+
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        commentDiv.innerHTML = `<strong>${name}</strong>: <p>${comment}</p>`;
+        
+        document.getElementById('commentsList').appendChild(commentDiv);
+
+        document.getElementById('commentForm').reset();
+    });
+    </script>
+</body>
+</html>
