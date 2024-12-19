@@ -13,13 +13,12 @@
     <div id="news-container"></div>
 
     <script>
-        // URL-аас өгөгдлийг татах
+
         const params = new URLSearchParams(window.location.search);
         const title = params.get("title");
         const description = params.get("description");
         const pubDate = params.get("pubDate");
 
-        // Контентыг "news-container" дотор нэмэх
         const newsContainer = document.getElementById("news-container");
         newsContainer.innerHTML = `
             <div class="news-detail">

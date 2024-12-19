@@ -15,82 +15,50 @@
 <div id="news-container">Мэдээнүүд ачааллаж байна...</div>
 
 <script>
-    // XMLHttpRequest обьектыг үүсгэнэ: Энэ нь HTTP хүсэлт илгээж, хариуг авахад ашиглагдана.
     const xhr = new XMLHttpRequest();
-
-    // Proxy ашиглаж кросс-домен хүсэлтийг зөвшөөрөх боломжтой болно.
     const proxy = "https://api.allorigins.win/get?url=";
-
-    // Татах RSS урсгалын URL-г URI байдлаар encode хийнэ.
     const url = encodeURIComponent("https://ikon.mn/rss");
 
-    // Хүсэлтийг GET аргачлалаар онлайнаар нээх, асинхрон байдлаар ажиллуулах.
     xhr.open("GET", `${proxy}${url}`, true);
 
-    // Хүсэлт дуусмагц дуудагдах функц.
     xhr.onload = function () {
-        // HTTP статус 200 байвал амжилттай татсан гэж үзнэ.
         if (xhr.status === 200) {
-            // Хариу болгон ирсэн өгөгдлийг JSON хэлбэрт хөрвүүлэх.
             const json = JSON.parse(xhr.responseText);
-
-            // RSS урсгалын өгөгдлийг XML болгон хөрвүүлэхийн тулд DOMParser ашиглана.
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(json.contents, "text/xml");
 
-            // RSS урсгалын 'item' элементүүдийг авах.
             const items = xmlDoc.querySelectorAll("item");
-
-            // HTML-гийн "#news-container" элементийг авах ба контентыг нь цэвэрлэх.
             const newsContainer = document.getElementById("news-container");
             newsContainer.innerHTML = "";
 
-            // Мэдээнүүдийг нэг бүрчлэн боловсруулж UI-д оруулах.
             items.forEach(item => {
-                // Мэдээний гарчиг (title)-ийг текст хэлбэрт авах.
                 const title = item.querySelector("title").textContent;
-
-                // Мэдээний description хэсгийг HTML болгон parse хийх.
                 const descriptionHTML = item.querySelector("description").textContent;
-                //DOMParser: Текст хэлбэртэй өгөгдлийг HTML эсвэл XML хэлбэрт хөрвүүлдэг обьект.
                 const descriptionDoc = new DOMParser().parseFromString(descriptionHTML, "text/html");
-
-                // Нийтэлсэн огноог авах.
                 const pubdate = item.querySelector("pubDate").textContent;
-
-                // `details` ба `summary` элементүүдийг үүсгэж тохируулна.
                 const details = document.createElement("details");
                 const summary = document.createElement("summary");
-                summary.textContent = title; // Мэдээний гарчгийг харуулах.
+                summary.textContent = title;
 
-                // "summary" дээр click үйлдэл болох үед мэдээний дэлгэрэнгүй хуудас руу шилжүүлнэ.
                 summary.addEventListener("click", () => {
                     const params = new URLSearchParams();
-                    params.append("title", title); // Мэдээний гарчиг
-                    params.append("description", descriptionHTML); // Мэдээний тайлбар
-                    params.append("pubDate", pubdate); // Нийтэлсэн огноо
+                    params.append("title", title);
+                    params.append("description", descriptionHTML);
+                    params.append("pubDate", pubdate);
 
-                    // `news-detail.html` хуудас руу хаягийг query параметрүүдтэй дамжуулах.
                     window.location.href = `news-detail.html?${params.toString()}`;
                 });
 
-                // `details` элементэд `summary` элементийг нэмнэ.
                 details.appendChild(summary);
-
-                // "news-container" контейнерт дэлгэрэнгүй мэдээллийг нэмэх.
                 newsContainer.appendChild(details);
             });
         } else {
-            // Хүсэлт амжилтгүй бол, алдааны мэдээллийг харуулах.
             console.error("RSS өгөгдлийг татахад алдаа гарлаа.");
             document.getElementById("news-container").innerText = "Мэдээллийг ачааллахад алдаа гарлаа.";
         }
     };
 
-    // Хүсэлтийг илгээх явцад алдаа гарсан тохиолдолд харуулах.
     xhr.onerror = () => console.error("Хүсэлт илгээхэд алдаа гарлаа.");
-
-    // HTTP хүсэлтийг сервер рүү илгээх.
     xhr.send();
 </script>
 </body>

@@ -12,7 +12,6 @@
     </header>
     <div id="news-container"></div>
 
-    <!-- Сэтгэгдэл бичих болон жагсаалт харуулах хэсэг -->
     <h2>Сэтгэгдэл үлдээх</h2>
 
     <div class="comment-section">
@@ -27,13 +26,12 @@
         <div id="commentsList"></div>
     </div>
     <script>
-        // URL-аас өгөгдлийг татах
+
         const params = new URLSearchParams(window.location.search);
         const title = params.get("title");
         const description = params.get("description");
         const pubDate = params.get("pubDate");
 
-        // Контентыг "news-container" дотор нэмэх
         const newsContainer = document.getElementById("news-container");
         newsContainer.innerHTML = `
             <div class="news-detail">
