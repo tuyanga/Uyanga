@@ -132,7 +132,7 @@ button:hover {
 #breaking-news span {
     display: inline-block;
     padding-right: 100%;
-    animation: ticker 30s linear infinite;
+    animation: ticker 100s linear infinite;
 }
 
 @keyframes ticker {
@@ -140,6 +140,6 @@ button:hover {
         transform: translateX(100%);
     }
     to {
-        transform: translateX(-300%);
+        transform: translateX(-100%);
     }
 }
